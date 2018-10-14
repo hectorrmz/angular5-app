@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RedmineService } from '../services/redmine.service';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  loading: boolean = false;
+  isLogged: boolean = false;
 
-  constructor() { }
+  user: any = {
+    username: '',
+    password: ''
+  };
 
-  ngOnInit() {
+  constructor(private redmineService: RedmineService) {}
+
+  onLogin() {
+    this.loading = true;
+    this.redmineService
+      .loginRM(this.user)
+      .subscribe(res => {
+        this.loading= false;
+        this.isLogged = true;
+      }, err=>{
+        this.loading=false;
+      });
   }
 
+  ngOnInit() {}
 }
