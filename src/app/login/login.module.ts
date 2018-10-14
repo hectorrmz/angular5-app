@@ -6,11 +6,11 @@ import { LaddaModule } from 'angular2-ladda';
 
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
 import { LoginComponent } from './login.component';
-import {RedmineService} from '../services/redmine.service'
+import { AuthService } from '../services/auth.service';
 
 @NgModule({
   imports: [CommonModule, FormsModule, AngularMaterialModule, LaddaModule],
   declarations: [LoginComponent],
-  providers:[RedmineService]
+  providers: [AuthService]
 })
 export class LoginModule {}

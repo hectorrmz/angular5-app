@@ -11,6 +11,11 @@
     &.isLogged{
         animation: fade-out .7s ease-out forwards;
     }
+
+    .error-container{
+        margin: 25px 0;
+        height: 25px;
+    }
 }
 
 :host /deep/ .mat-checkbox-layout {

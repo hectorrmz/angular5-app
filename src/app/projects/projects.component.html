@@ -1,0 +1,18 @@
+<section class="projects-list container">
+  <div class="row">
+
+    <div class="project col-md-3 " *ngFor="let project of projects; let i = index" [class.loaded]="loaded" [style.animation-delay]="(i*.2) + 's' " >
+      <div class="card">
+        <div class="card-header">
+          {{project.name}}
+        </div>
+        <div class="card-body">
+          <div class="issue" *ngFor="let issue of issues | filterIssues:project.id">
+            <a (click)="issueSelected(issue)" class="text-link">{{issue.subject}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

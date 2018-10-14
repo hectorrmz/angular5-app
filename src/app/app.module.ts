@@ -12,9 +12,17 @@ import { HttpModule } from '@angular/http';
 import { LaddaModule } from 'angular2-ladda';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
+import {
+  ProjectsComponent,
+  FilterIssueByProject
+} from './projects/projects.component';
+
+import { RedmineService } from './services/redmine.service';
+import { AuthHelper } from './services/auth-helper.service';
+import { CalendarModule} from './calendar/calendar.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ProjectsComponent, FilterIssueByProject],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -27,9 +35,10 @@ import { LoginComponent } from './login/login.component';
     }),
 
     AppRoutingModule,
-    LoginModule
+    LoginModule,
+    CalendarModule
   ],
-  providers: [],
+  providers: [RedmineService, AuthHelper],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

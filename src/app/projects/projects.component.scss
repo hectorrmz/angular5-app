@@ -1,0 +1,52 @@
+.project {
+    margin: 5px 0;
+    top: 200px;
+    position: relative;
+    transition: all 0.3s ease-out;
+    height: 100%;
+    opacity:0;
+    &.loaded {
+        top: 0;
+        animation: slide-in 1s ease-out forwards;
+    }
+    .card-header {
+        font-size: 11px;
+        text-align: center;
+        min-height: 55px;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+    .card-body {
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+    .issue {
+        padding: 20px;
+        width: 100%;
+        cursor: pointer;
+        &:hover {
+            background: #d8e1ea;
+        }
+        &:active {
+            background: #b8c2cc;
+        }
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        top: 200px;
+    }
+
+    50%{
+        opacity:0;
+    }
+
+    100% {
+        top: 0;
+        opacity:1;
+    }
+}

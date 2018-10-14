@@ -1,18 +1,24 @@
 <section class="text-center">
-  <form #logInForm class="form-signin" [class.isLogged]="isLogged" >
+  <form #logInForm class="form-signin" [class.isLogged]="isLogged">
     <img class="mb-4" src="assets/redmine-logo.png" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in with your unosquare credentials</h1>
 
     <div class="form-group">
 
-      <input type="email" name="email" id="inputEmail" class="form-control mb-2" [(ngModel)]="user.username" placeholder="Email address" required=""
-        autofocus="">
+      <input type="email" name="email" id="inputEmail" class="form-control mb-2" [(ngModel)]="user.username" placeholder="Email address"
+        required="" autofocus="">
 
-      <input type="password" name="password" id="inputPassword" [(ngModel)]="user.password" class="form-control mb-2" placeholder="Password" required="">
+      <input type="password" name="password" id="inputPassword" [(ngModel)]="user.password" class="form-control mb-2" placeholder="Password"
+        required="">
+    </div>
+
+    <button (click)="logInUser()" [ladda]="loading" class="btn btn-lg btn-primary btn-block" type="button">Sign in</button>
+
+    <div class="error-container">
+      <p class="error text-danger">{{error?.message}} </p>
     </div>
 
 
-    <button (click)="onLogin()" [ladda]="loading" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted">Beta service</p>
   </form>
 
