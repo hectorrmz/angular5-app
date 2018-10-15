@@ -7,6 +7,7 @@ import 'rxjs/add/operator/catch';
 
 import { User } from '../models/redmine.model';
 import { AuthHelper } from './auth-helper.service';
+import { Time } from '../models/calendar.model';
 
 @Injectable()
 export class RedmineService {
@@ -40,6 +41,23 @@ export class RedmineService {
   getIssues(): Observable<any> {
     return this.http
       .get(`redmine/issues?id=${this.userId}`, this.options)
+      .map((response: Response) => response.json())
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
+  getTimeEntries(issueId: number, date: string) {
+    return this.http
+      .get(
+        `times?id=${this.userId}&issue_id=${issueId}&spend_on=${date}`,
+        this.options
+      )
+      .map((response: Response) => response.json())
+      .catch((error: any) => Observable.throw(error.json()));
+  }
+
+  setTimeEntries(times: Time[]) {
+    return this.http
+      .post('times', times, this.options)
       .map((response: Response) => response.json())
       .catch((error: any) => Observable.throw(error.json()));
   }

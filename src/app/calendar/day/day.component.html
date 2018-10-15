@@ -1,0 +1,20 @@
+<div class="day" dnd-droppable (onDropSuccess)="transferDataSuccess($event, modal)">
+  <div *ngFor="let time of  day.times.entries; let i=index" class="time activity-{{time.activity.id}}" [ngClass]="{'no-drag': !time.isNew, 'selected': time === selected, 'exist' : !time.isNew}"
+    (dblclick)="editTime(modal, time)">
+    <span>{{time.title}}</span>
+    <div>
+      <span class="hours">Hours:
+        <span class="hour-value">{{time.duration}}</span>
+      </span>
+    </div>
+    <span class="remove-time" *ngIf="time.isNew" (click)="removeTime(i)">
+      <i class="fa fa-times"></i>
+    </span>
+  </div>
+</div>
+<div class="day-footer" ng-if="day.date">
+  <div class="add-btn" (click)="modal.show(day, null, true)">
+    <i class="fa fa-plus"></i>
+  </div>
+  <span>Total: {{total}}</span>
+</div>

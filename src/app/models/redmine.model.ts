@@ -31,3 +31,23 @@ export interface Project {
   created_on?: string;
   updated_on?: string;
 }
+
+export interface TimeEntry {
+  activity?: Activity;
+  comments?: string;
+  created_on?: string;
+  hours?: number;
+  id?: number;
+  issue?: any;
+  project?: any;
+  spent_on?: string;
+  updated_on?: string;
+  user?: any;
+}
+
+export class Activity {
+  id?: number;
+  name?: string;
+
+  constructor() {}
+}

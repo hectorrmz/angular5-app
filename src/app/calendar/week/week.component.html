@@ -1,0 +1,10 @@
+<ng-container *ngFor="let week of weeks; let i= index">
+  <div class="week row" *ngIf="view === i">
+    <ng-container *ngFor="let day of week.days;">
+      <div class="weekday col-md-2" *ngIf="day.day!=0 && day.day!=6" [ngClass]="{'no-active': !day.date}">
+        <header>{{day.name}} {{day.date}}</header>
+
+      </div>
+    </ng-container>
+  </div>
+</ng-container>

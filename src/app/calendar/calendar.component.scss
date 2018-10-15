@@ -1,0 +1,102 @@
+.calendar-view {
+  /* Arrow holder */
+  .arrowed {
+    position: relative;
+    margin: 0 35px 0px 20px;
+    cursor: pointer;
+    user-select: none;
+  }
+  /* Just centering the examples */
+  .arrowed div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  /* -- ARROW 1      -- */
+  .arrow-1 {
+    height: 15px;
+    width: 15px;
+    border: 1px solid #476fff;
+    border-width: 2px 2px 0 0;
+    &.right {
+      transform: rotate(45deg);
+    }
+    &.left {
+      transform: rotate(225deg);
+    }
+    &:hover {
+      border-color: #8ea5f9;
+    }
+  }
+  .calendarBox {
+    margin: 0 auto;
+  }
+  .navigation {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: #0f65c3;
+  }
+  .time-calendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    .calendar {
+      width: 90%;
+      max-width: 900px;
+      width: 800px;
+      .week {
+        display: flex;
+        justify-content: space-between;
+        .weekday {
+          position: relative;
+          border: 1px solid #dedede;
+          min-height: 400px;
+          padding-bottom: 30px;
+          .day {
+            height: 100%;
+          }
+          .day-footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(204, 204, 204, 0.8);
+            padding: 5px 12px;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            .add-btn {
+              background: #4a78cc;
+              color: white;
+              padding: 1px 6px;
+              border-radius: 7px;
+              font-size: 12px;
+              cursor: pointer;
+              &:hover {
+                background: #6789c7;
+              }
+            }
+          }
+          &.no-active {
+            background: #f9f9f9;
+          }
+          header {
+            text-align: center;
+            border-bottom: 1px solid #dedede;
+          }
+        }
+      }
+    }
+  }
+  .weekday ul {
+    padding: 0;
+  }
+}
+
+.dndDraggingSource {
+  display: none;
+}

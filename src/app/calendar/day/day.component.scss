@@ -1,0 +1,92 @@
+.time,
+.time-option {
+    position: relative;
+    border: 1px solid #bbbbbb;
+    margin: 2px;
+    padding: 5px 15px;
+    font-size: 12px;
+    line-height: 1.2;
+    min-height: 60px;
+    border-radius: 5px; //Development
+    user-select: none;
+    cursor: pointer;
+    &:hover {
+        opacity: .95;
+    }
+    &.selected {
+        .remove {
+            display: block;
+        }
+    }
+    &:active {
+        opacity: .9;
+    }
+    &.activity-9 {
+        background: #7bcc4a;
+        color: #1e5a2c;
+    } //Meeting
+    &.activity-10 {
+        background: #4b9ccc;
+        color: #225979;
+    } //Infrastructute
+    &.activity-73 {
+        background: #e65757;
+        color: #752727;
+    } //Holiday
+    &.activity-72 {
+        height: 365px;
+        background: #ececec;
+    } //Research
+    &.activity-14 {
+        background: #ad5bf7;
+        color: #49286b;
+    } //Testing
+    &.activity-12 {
+        background: #8df9d1;
+        color: #31735b;
+    } //Infrastructure shutdown
+    &.activity-147 {
+        background: #f96666;
+    }
+    .hours {
+        background: black;
+        color: white;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 2px 7px;
+        border-radius: 5px;
+    }
+    .remove {
+        background: black;
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        padding: 4px 5px;
+        border-radius: 10px;
+        color: white;
+        font-size: 9px;
+        display: none;
+    }
+    &.no-drag {
+        cursor: not-allowed;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &.exist {
+        opacity: .7;
+    }
+    .remove-time {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        background: black;
+        padding: 3px;
+        border-radius: 5px;
+        color: white;
+        &:hover {
+            opacity: .8;
+        }
+    }
+}
